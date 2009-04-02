@@ -1,0 +1,2 @@
+CREATE ROLE aoldb LOGIN PASSWORD 'artadmin';
+CREATE DATABASE aoldb OWNER aoldb;

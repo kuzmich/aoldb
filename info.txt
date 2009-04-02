@@ -1,2 +1,2 @@
-CREATE ROLE aoldb LOGIN PASSWORD 'artadmin';
+CREATE ROLE aoldb LOGIN PASSWORD 'pasword';
 CREATE DATABASE aoldb OWNER aoldb;

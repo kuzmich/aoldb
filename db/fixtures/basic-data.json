@@ -1,0 +1,66 @@
+[
+  {
+    "pk": 1, 
+    "model": "db.country", 
+    "fields": {
+      "name": "\u0420\u043e\u0441\u0441\u0438\u044f"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "db.city", 
+    "fields": {
+      "country": 1, 
+      "name": "\u0418\u0440\u043a\u0443\u0442\u0441\u043a"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "db.coursetype", 
+    "fields": {
+      "name": "\u0411\u0430\u0437\u043e\u0432\u044b\u0439"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "db.personstatus", 
+    "fields": {
+      "name": "\u041f\u0440\u043e\u0448\u0435\u0434\u0448\u0438\u0439 \u0431\u0430\u0437\u043e\u0432\u044b\u0439 \u043a\u0443\u0440\u0441"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "db.personstatus", 
+    "fields": {
+      "name": "\u0423\u0447\u0438\u0442\u0435\u043b\u044c \u0431\u0430\u0437\u043e\u0432\u043e\u0433\u043e \u043a\u0443\u0440\u0441\u0430"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "db.personinfotype", 
+    "fields": {
+      "name": "E-mail"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "db.participanttype", 
+    "fields": {
+      "name": "\u0423\u0447\u0430\u0441\u0442\u043d\u0438\u043a"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "db.participanttype", 
+    "fields": {
+      "name": "\u0423\u0447\u0438\u0442\u0435\u043b\u044c"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "db.participanttype", 
+    "fields": {
+      "name": "\u0410\u0441\u0441\u0438\u0441\u0442\u0435\u043d\u0442"
+    }
+  }
+]

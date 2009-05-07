@@ -1,0 +1,5 @@
+# Lines starting with '#' are considered comments.
+# Ignore python compiled files
+*.pyc
+*.swp
+

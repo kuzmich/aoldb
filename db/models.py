@@ -50,10 +50,11 @@ class Person(models.Model):
    
 
     def __unicode__(self):
-        return '%d %d %s' % (self.id, self.code, self.name)
+        return '%d %s %s %s %s' % (self.id, self.gender, self.first_name, self.last_name, self.birthday)
 
 class PersonInfoType(models.Model):
     name = models.CharField(max_length=50)
+    #code = models.CharField(max_length=15)
 
     def __unicode__(self):
         return '%d %s' % (self.id, self.name)
@@ -64,7 +65,7 @@ class PersonInfo(models.Model):
     text = models.CharField(max_length=250)
 
     def __unicode__(self):
-        return '%d %s' % (self.id, self.name)
+        return '%s %s' % (self.type.name, self.text)
 
 class ParticipantType(models.Model):
     name = models.CharField(max_length=50)

@@ -23,10 +23,13 @@ class CourseType(models.Model):
 
 class Course(models.Model):
     start_date = models.DateField()
-    end_date = models.DateField()
+    end_date = models.DateField() # null = True
     city = models.ForeignKey(City)
     type = models.ForeignKey(CourseType)
     
+    def __unicode__(self):
+        return '%d %s %s %s' % (self.id, self.start_date, self.city.name, self.type.name)
+
 class PersonStatus(models.Model):
     name = models.CharField(max_length=50)
 
@@ -47,6 +50,7 @@ class Person(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     statuses = models.ManyToManyField(PersonStatus)
     cources = models.ManyToManyField(Course, through='PersonsCources')
+    # info (PersonInfo)
    
 
     def __unicode__(self):
@@ -60,7 +64,7 @@ class PersonInfoType(models.Model):
         return '%d %s' % (self.id, self.name)
 
 class PersonInfo(models.Model):
-    person = models.ForeignKey(Person)
+    person = models.ForeignKey(Person, related_name='info')
     type = models.ForeignKey(PersonInfoType)
     text = models.CharField(max_length=250)
 
@@ -79,7 +83,7 @@ class PersonsCources(models.Model):
     type = models.ForeignKey(ParticipantType)
 
     def __unicode__(self):
-        return '%d %s' % (self.id, self.name)
+        return '%s %s %s %s' % (self.person.first_name, self.person.last_name, self.type.name, self.course.start_date)
 
     class Meta:
         db_table = 'db_person_cources'

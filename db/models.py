@@ -16,6 +16,7 @@ class City(models.Model):
         return '%d %s' % (self.id, self.name)
 
 class CourseType(models.Model):
+    """Тип курса - базовый, продолженный, DSN, Сахадж и т.д."""
     name = models.CharField(max_length=50)
 
     def __unicode__(self):
@@ -31,6 +32,7 @@ class Course(models.Model):
         return '%d %s %s %s' % (self.id, self.start_date, self.city.name, self.type.name)
 
 class PersonStatus(models.Model):
+    """'Статус' человека - учитель баз. курса, учитель YES и т.д., DSN, TTC1"""
     name = models.CharField(max_length=50)
 
     def __unicode__(self):
@@ -57,6 +59,7 @@ class Person(models.Model):
         return '%d %s %s %s %s' % (self.id, self.gender, self.first_name, self.last_name, self.birthday)
 
 class PersonInfoType(models.Model):
+    """Тип персональной информации (email, телефон, адрес, профессия и т.д.)"""
     name = models.CharField(max_length=50)
     #code = models.CharField(max_length=15)
 
@@ -64,14 +67,16 @@ class PersonInfoType(models.Model):
         return '%d %s' % (self.id, self.name)
 
 class PersonInfo(models.Model):
+    """Персональная информация"""
     person = models.ForeignKey(Person, related_name='info')
     type = models.ForeignKey(PersonInfoType)
-    text = models.CharField(max_length=250)
+    value = models.CharField(max_length=250)
 
     def __unicode__(self):
-        return '%s %s' % (self.type.name, self.text)
+        return '%s %s' % (self.type.name, self.value)
 
 class ParticipantType(models.Model):
+    """Кем был на курсе - учитель, ассистент, участник"""
     name = models.CharField(max_length=50)
 
     def __unicode__(self):
